@@ -41,6 +41,7 @@
     .search input{flex:1;padding:10px 14px;border-radius:10px;border:1px solid rgba(11,35,64,0.06);background:white}
     .actions{display:flex;gap:10px;align-items:center}
     .btn{padding:10px 14px;border-radius:10px;border:none;background:var(--blue-500);color:white;font-weight:700;cursor:pointer}
+    .btn-danger{padding:10px 14px;border-radius:10px;border:none;background:var(--danger);color:white;font-weight:700;cursor:pointer}
     .card-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:18px}
 
     .card{background:var(--panel);padding:18px;border-radius:12px;box-shadow:var(--shadow)}

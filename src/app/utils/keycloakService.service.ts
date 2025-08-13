@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import Keycloak from 'keycloak-js';
 
+const CLIENT_ID="api-paiement-app";
 @Injectable({
     providedIn: 'root'
 })
@@ -39,6 +40,18 @@ export class KeycloakService {
 
     get userName(): string | undefined {
         return this.keycloak?.tokenParsed?.['preferred_username'];
+    }
+
+    get roles(): string[] {
+        return this.keycloak?.tokenParsed?.resource_access?.[CLIENT_ID]?.roles || [];
+    }
+
+    isAdmin(): boolean {
+        return this.roles.includes('role_admin') || this.roles.includes('admin');    
+    }
+
+    isClient(): boolean {
+        return this.roles.includes('client') || this.roles.includes('role_client');
     }
 
     get isTokenExpired(): boolean {

@@ -1,1 +1,39 @@
 <p>account-creation works!</p>
+<div class="form-card">
+    <h1>Créer un Compte e‑Banking</h1>
+    <form id="createAccount" onsubmit="return false">
+      <label>Prénom
+        <input type="text" placeholder="Votre prénom" required />
+      </label>
+      <label>Nom de famille
+        <input type="text" placeholder="Votre nom" required />
+      </label>
+      <label>Email
+        <input type="email" placeholder="exemple@mail.com" required />
+      </label>
+      <label>Numéro de téléphone
+        <input type="tel" placeholder="06 00 00 00 00" required />
+      </label>
+      <label>Date de naissance
+        <input type="date" required />
+      </label>
+      <label>Type de compte
+        <select required>
+          <option value="">-- Sélectionner --</option>
+          <option>Compte courant</option>
+          <option>Compte épargne</option>
+        </select>
+      </label>
+      <label class="full">Adresse
+        <input type="text" placeholder="Rue, Ville, Code postal" required />
+      </label>
+      <label>Mot de passe
+        <input type="password" placeholder="••••••••" required />
+      </label>
+      <label>Confirmer le mot de passe
+        <input type="password" placeholder="••••••••" required />
+      </label>
+      <button class="btn full" type="submit">Créer mon compte</button>
+      <div class="muted">Vous avez déjà un compte ? <a href="#" style="color:var(--blue-500);text-decoration:none;">Connectez‑vous</a></div>
+    </form>
+  </div>
