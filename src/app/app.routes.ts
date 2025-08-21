@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 import {
   AccountCreation,
 } from './components/account-creation/account-creation';
+import { AccountList } from './components/account-list/account-list';
 import { Home } from './components/home/home';
 import { Login } from './components/login/login';
 import { authGuard } from './guard/auth-guard';
@@ -24,6 +25,10 @@ export const routes: Routes = [
         {
             path:'account-creation',
             component:AccountCreation
+        },
+        {
+            path:'account-list',
+            component:AccountList
         }
     ],
     canActivate: [authGuard]

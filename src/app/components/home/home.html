@@ -24,20 +24,53 @@
       </section>
 
       <div class="layout">
-        <section class="card transactions">
+          <!-- <section class="card transactions">
+             <h3 style="margin-top: 0;">Liste des comptes crées</h3>
+             <table>
+              <thead>
+                <tr>
+                  <th>Numero compte</th>
+                  <th>Type de compte</th>
+                  <th>Devise</th>
+                  <th>Nom titulaire</th>
+                   <th>Prénom titulaire</th>
+                   <th>Email titulaire</th>
+                   <th>Solde</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                @for(account of datas; track account.id) {
+                  <tr>
+                    <td>{{account.numeroCompte}}</td>
+                    <td>{{account.typeCompte}}</td>
+                    <td>{{account.devise}}</td>
+                    <td>{{account.infosTitulaire.nom}}</td>
+                    <td>{{account.infosTitulaire.prenom}}</td>
+                    <td>{{account.infosTitulaire.email}}</td>
+                    <td>{{account.solde}}</td>
+                    <td><button class="btn" (click)="deleteAccount(account.id)">Supprimer</button></td>
+                  </tr>
+                }
+              </tbody>
+             </table>
+          </section> -->
+
+       <!-- <section class="card transactions">
           <h3 style="margin-top:0">Transactions récentes</h3>
           <table>
             <thead>
               <tr><th>Nom</th><th>Type</th><th>Montant</th><th>Date</th></tr>
             </thead>
             <tbody id="txbody">
-              <!-- JS inject -->
+             
             </tbody>
           </table>
           <div style="text-align:center;margin-top:12px"><button class="btn" style="background:var(--blue-700)">Voir tout</button></div>
-        </section>
+        </section> -->
+        
 
-        <aside class="card transfer">
+        <!-- <aside class="card transfer">
           <h3>Virement rapide</h3>
           <form id="transferForm" onsubmit="return false">
             <label>De
@@ -65,4 +98,4 @@
             <li style="padding:10px;border-radius:10px;background:#fff;border:1px solid #f0f7ff">Télécharger Relevé</li>
           </ul>
         </aside>
-      </div>
+      </div> -->

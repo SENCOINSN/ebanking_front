@@ -3,6 +3,7 @@ import {
   FormsModule,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import Swal from 'sweetalert2';
 
@@ -29,7 +30,9 @@ export class AccountCreation {
     soldeInitial: 0
   }
 
-  constructor(private accountService: AccountService) {}
+  constructor(private accountService: AccountService,
+    private router: Router
+  ) {}
 
 
   createAccount(){
@@ -40,6 +43,7 @@ export class AccountCreation {
       next:(resp)=>{
         console.log('Account created successfully with ID:', resp);
         this.showAllertSuccess(resp);
+        this.router.navigate(['/dashboard/home']);
       },
       error:(err)=>{
         console.log(err);

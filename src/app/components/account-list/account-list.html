@@ -1,0 +1,45 @@
+<section class="card transactions">
+   <h3 style="margin-top: 0;">Liste des comptes crées</h3>
+
+   <table>
+        <thead>
+        <tr>
+            <th>Numero compte</th>
+            <th>Type de compte</th>
+            <th>Devise</th>
+            <th>Nom titulaire</th>
+            <th>Prénom titulaire</th>
+            <th>Email titulaire</th>
+            <th>Solde</th>
+            <!-- <th>Actions</th> -->
+        </tr>
+        </thead>
+              <tbody>
+                @for(account of datas; track account.id) {
+                  <tr>
+                    
+                    <td>{{account.numeroCompte}}</td>
+                    <td>{{account.typeCompte}}</td>
+                    <td>{{account.devise}}</td>
+                    <td>{{account.infosTitulaire.nom}}</td>
+                    <td>{{account.infosTitulaire.prenom}}</td>
+                    <td>{{account.infosTitulaire.email}}</td>
+                    <td>{{account.solde}}</td>
+                    <td><button class="btn-danger" (click)="deleteAccount(account.id)">Supprimer</button></td>
+                  </tr>
+                }
+              </tbody>
+             </table>
+
+       <div class="pagination" aria-label="Pagination">
+        <!-- <div id="tableInfo" class="info">Affichage de 0 à 0 sur 0 entrées</div> -->
+        <div class="spacer"></div>
+        <button id="firstBtn" class="btn" aria-label="Première page" (click)="goToFirstPage()">⏮</button>
+        <button id="prevBtn" class="btn" aria-label="Page précédente" (click)="goToPreviousPage()">◀</button>
+        <span id="pages" class="pages" aria-live="polite"></span>
+        <button id="nextBtn" class="btn" aria-label="Page suivante" (click)="goToNextPage()">▶</button>
+        <button id="lastBtn" class="btn" aria-label="Dernière page" (click)="goToLastPage()">⏭</button>
+      </div>
+</section>
+  
+  

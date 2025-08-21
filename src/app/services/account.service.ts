@@ -13,9 +13,14 @@ import {
   Account$Params,
   saveAccount,
 } from './fn/create-account-bank';
+import {
+  findAllAccounts,
+  FindAllAccounts$Params,
+} from './fn/find-all-accounts';
 import { ApiConfiguration } from './generics/api-configuration';
 import { BaseService } from './generics/base-service';
 import { StrictHttpResponse } from './generics/strict-http-response';
+import { ApiResponse } from './responses/api-response';
 
 @Injectable({
   providedIn: 'root'
@@ -38,4 +43,19 @@ export class AccountService extends BaseService{
       map((r: StrictHttpResponse<string>) => r.body as string)
     );
   }
+
+  // path to the findAllAccounts function
+  static readonly findAllAccountsPath = '/api/v1/comptes/all';
+
+  findAllAccounts$Response(params?: FindAllAccounts$Params, context?: HttpContext):Observable<StrictHttpResponse<ApiResponse>> {
+    return findAllAccounts(this.http, this.rootUrl, params, context);
+  }
+
+  findAllAccounts(params?: FindAllAccounts$Params, context?: HttpContext):Observable<ApiResponse> {
+    return this.findAllAccounts$Response(params, context).pipe(
+      map((r: StrictHttpResponse<ApiResponse>) => r.body as ApiResponse)
+    );
+  }
+
+
 }
