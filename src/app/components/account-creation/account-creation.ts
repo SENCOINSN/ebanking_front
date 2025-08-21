@@ -43,7 +43,7 @@ export class AccountCreation {
       next:(resp)=>{
         console.log('Account created successfully with ID:', resp);
         this.showAllertSuccess(resp);
-        this.router.navigate(['/dashboard/home']);
+        this.router.navigate(['/dashboard/account-list']);
       },
       error:(err)=>{
         console.log(err);
