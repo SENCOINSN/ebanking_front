@@ -8,13 +8,16 @@
       </div>
 
       <nav class="nav">
+      
         <a routerLink="/dashboard" class="active">Accueil</a>
-        <a routerLink="/dashboard/account-creation">Créer un compte</a>
-        <a routerLink="/dashboard/account-list">Comptes</a>
-        <a href="#">Les opérations</a>
-        <a href="#">Mes transactions</a>
-        <a href="#">Historique</a>
-        <a href="#">Paramètres</a>
+          @if(isAdmin) {
+          <a routerLink="/dashboard/account-creation">Créer un compte</a>
+          <a routerLink="/dashboard/account-list">Comptes</a>
+          <a href="#">Les opérations</a>
+           <a href="#">Paramètres</a>
+        }@else {
+            <a href="#">Mes transactions</a>
+        }       
       </nav>
 
       <hr style="margin:18px 0;border:none;border-top:1px solid #eef6ff">
